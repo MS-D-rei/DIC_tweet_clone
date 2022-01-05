@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     if params[:back]
       render :new
     elsif @post.save
+      flash[:success] = 'tweeted successfully'
       redirect_to root_url
     else
       render :new
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
+    flash[:success] = 'tweet deleted'
     redirect_to root_url
   end
 
