@@ -1,0 +1,7 @@
+<h3>Plesae check before posting</h3>
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= f.hidden_field :content %>
+  <%= @post.content %><br>
+  <%= f.submit 'Are you sure?', class: 'btn btn-primary' %>
+  <%= f.submit 'Back', class: 'btn btn-primary', name: 'back' %>
+<% end %>

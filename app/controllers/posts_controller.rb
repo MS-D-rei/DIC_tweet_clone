@@ -7,12 +7,19 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
+  end
+
   def create
     @post = Post.new(post_params)
-    if @post.save
+    if params[:back]
+      render :new
+    elsif @post.save
       redirect_to root_url
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -25,7 +32,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to root_url
     else
-      render 'edit'
+      render :edit
     end
   end
 
