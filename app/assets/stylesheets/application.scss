@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ #logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: rgb(25, 9, 167);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+      color: white;
+      text-decoration: none;
+  }
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid grey;
+  color: grey;
+}
